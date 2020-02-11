@@ -21,7 +21,39 @@
 
 int main(int argc,char** argv)
 {
-    
+    bool debug = false;
+    std::string run_mode = "standard"
+
+    for(int i = 0; i< argc, i++){
+        std::cout << *(argv[i]) << std::endl;
+        std::string argument = *(argv[i]);
+
+        if(argument=="--debug")
+        {
+            debug = true;
+        }
+
+        else if (argument=="--prompt")
+        {
+            run_mode = "interactive";
+        }
+        
+        else if (argument=="--vis")
+        {
+            run_mode = "visualization";
+        }
+
+        else if (argument.find("--gases")!=std::string::npos)
+        {
+            for (size_t i = 8; i < argument.size(); i++)
+            {
+                /* code */
+            }
+            
+        }
+        
+    }
+
     // Run manager
 	//
 	G4cout<<"main: init G4RunManager"<<G4endl;
@@ -89,7 +121,7 @@ int main(int argc,char** argv)
         delete runManager;
 	
     std::cout << '\a'; //Beeps once when it's done
-    
+
 	return 0;
 }
 
