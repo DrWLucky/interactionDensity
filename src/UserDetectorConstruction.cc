@@ -47,6 +47,12 @@ G4VPhysicalVolume* UserDetectorConstruction::Construct()
     G4double z, a, fractionOfNobleGas, density,temperature, pressure;
     G4String name, symbol;
     G4int ncomponents, natoms;
+
+    a = 4.00*g/mole;
+    G4Element* elHe  = new G4Element(name="Helium", symbol="He", z= 2., a);
+
+    a = 21.18*g/mole;
+    G4Element* elNe  = new G4Element(name="Neon", symbol="Ne", z= 10., a);
     
     a = 39.95*g/mole;
     G4Element* elAr  = new G4Element(name="Argon", symbol="Ar", z= 18., a);
